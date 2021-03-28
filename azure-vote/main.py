@@ -8,6 +8,7 @@ import logging
 from datetime import datetime
 
 from opencensus.ext.azure.log_exporter import AzureLogHandler
+from opencensus.ext.azure.log_exporter import AzureEventHandler
 
 # App Insights
 # TODO: Import required libraries for App Insights
@@ -26,7 +27,8 @@ from opencensus.trace.samplers import ProbabilitySampler
 # Logging
 #logger = # TODO: Setup logger
 logger = logging.getLogger(__name__)
-logger.addHandler(AzureLogHandler(connection_string='InstrumentationKey=f9f9979c-62f3-46c2-906c-838b13ec655a'))
+#logger.addHandler(AzureLogHandler(connection_string='InstrumentationKey=f9f9979c-62f3-46c2-906c-838b13ec655a'))
+logger.addHandler(AzureEventHandler(connection_string='InstrumentationKey=b415a6ab-8991-49fc-8d68-63c69f571b67'))
 
 # Metrics
 #exporter = # TODO: Setup exporter
